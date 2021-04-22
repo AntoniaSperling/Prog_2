@@ -23,13 +23,19 @@ public class TicTacToe {
 		{	field[i][j]=player;}
 	}
 
-	public void print()
+	public void print(State player)
 	{
 		for(int index = 0; index< field.length; index++)
 		{
 			for(int i = 0; i < field[i].length; i++)
 			{
-				
+				switch(player)
+				{
+				case EMPTY : System.out.print("-");
+				case RED   : System.out.print("X");
+				case BLACK : System.out.print("O");
+				}
+				System.out.println();
 			}
 		}
 	}
