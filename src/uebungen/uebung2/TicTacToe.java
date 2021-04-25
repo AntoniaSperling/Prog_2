@@ -1,4 +1,4 @@
-package uebung.uebung2;
+package uebungen.uebung2;
 
 public class TicTacToe {
 
