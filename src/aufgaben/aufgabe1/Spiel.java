@@ -4,6 +4,14 @@ public class Spiel
 {
 	public static int siegPunkte;
 	private Spieler[] spieler;
+	
+	Spiel()
+	{
+		anzSpielerFestlegen();
+		anzSiegPunkteFestlegen();
+		nameDerSpieler();
+
+	}
 
 	
 	public void anzSpielerFestlegen() {
