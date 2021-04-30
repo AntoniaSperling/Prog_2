@@ -81,7 +81,7 @@ public class ZahlEingeben {
 		int minuten = (seconds - tag * 86400-  stunden*3600) / 60;
 		int sekunden = (seconds - tag * 86400-  stunden*3600- minuten* 60);
 
-		String s = seconds + "Sekunden sind ";
+		String s = seconds + " Sekunden sind ";
 		if (tag>1)
 		{
 			s+= tag + " Tage, ";
