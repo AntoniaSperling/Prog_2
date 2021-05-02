@@ -130,7 +130,7 @@ public class MyInteger {
 
 	@Override
 	public String toString() {
-		return "MyInteger [value=" + value + "]";
+		return "MyInteger [value = " + value + "]";
 	}
 
 }

@@ -12,6 +12,7 @@ public class TestKlasse {
 		try {
 			mi1 = new MyInteger(5);
 			System.out.println("mi1: " +mi1.intValue());
+			System.out.println("mi1: " +mi1.doubleValue());
 			System.out.println(mi1.toString());
 			
 		}
@@ -35,7 +36,14 @@ public class TestKlasse {
 		{
 			System.out.println("mi3: " +e.getMessage());
 		}
-
+		
+		mi1 = new MyInteger("-000020");
+		mi2 = new MyInteger(-20);
+		System.out.println(mi1.equals(mi2));
+		System.out.println(mi2.hashCode());
+		System.out.println(MyInteger.valueOf(2));
+		System.out.println(MyInteger.valueOf(2147483646));
+	
 		
 	}
 
