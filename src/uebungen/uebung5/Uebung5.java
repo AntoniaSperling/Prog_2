@@ -11,30 +11,39 @@ public class Uebung5 {
 
 	public static List<String> createArrayList(String[] words)
 	{
-		List<String> list = new ArrayList<String>();
+		List<String> list = new ArrayList<>();
+		
+		for(String s : words)
+		{
+			list.add(s);
+		}
 
-		for (int i = 0; i < words.length; i++) 
+		/*for (int i = 0; i < words.length; i++) 
 		{ 
 			list.add(words[i]); 
-		}
+		}*/
 
 		return list;
 	}
 
 	public static void printList(List<String> list)
 	{
-		Iterator <String> it = list.iterator();
+//		Iterator<String> it = list.iterator();
 		System.out.println("Liste mit " + list.size() + " Elementen : ");
 		System.out.println("------------------------");
-		while(it.hasNext())
+		for(String s : list)
+		{
+			System.out.println(s);
+		}
+		/*while(it.hasNext())
 		{
 			System.out.println(it.next());
-		}
+		}*/
 	}
 
 	public static Set<String> createHashSet(String[] words)
 	{
-		Set<String> set = new HashSet<String>();
+		Set<String> set = new HashSet<>();
 
 		for(int index = 0; index < words.length; index++)
 		{
@@ -46,7 +55,7 @@ public class Uebung5 {
 
 	public static void printSet(Set<String> set)
 	{
-		Iterator <String> it = set.iterator();
+		Iterator<String> it = set.iterator();
 		System.out.println("Menge mit " + set.size() + " Elementen : ");
 		System.out.println("------------------------");
 		while(it.hasNext())
@@ -57,7 +66,7 @@ public class Uebung5 {
 
 	public static Set<String> createTreeSet(String[] words)
 	{
-		Set<String> set = new TreeSet<String>();
+		Set<String> set = new TreeSet<>();
 
 		for(int index = 0; index < words.length; index++)
 		{
@@ -65,6 +74,21 @@ public class Uebung5 {
 		}
 
 		return set;
+	}
+	
+	public static List<String> findDoubletes(List<String> list)
+	{
+		List<String> doubletes = new ArrayList<>();
+		Iterator<String> it = list.iterator();
+		while(it.hasNext())
+		{
+			String s = it.next();
+			if(list.indexOf(s) != list.lastIndexOf(s))
+			{
+				doubletes.add(s);
+			}
+		}
+		return doubletes;
 	}
 
 	public static void main(String[] args) {
@@ -86,7 +110,8 @@ public class Uebung5 {
 		list.remove("Google");
 		list.remove("Facebook");
 		printList(list);
-		//		Mengen
+		//		Mengen keine Elemente kommen doppelt vor 
+		System.out.println();
 		System.out.println("B. Mengen (Set)");
 		System.out.println();
 		//		HashSet ordent die Werte nach dem Hash-Code?
@@ -96,6 +121,10 @@ public class Uebung5 {
 		//		TreeSet ordent die Elemente nach dem Alpherbet
 		Set<String> treeSet = createTreeSet(words);
 		printSet(treeSet);
+		list = createArrayList(words);
+		List<String> list1 = findDoubletes(list);
+		printList(list1);
+		
 
 	}
 }
